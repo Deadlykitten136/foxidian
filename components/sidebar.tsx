@@ -43,8 +43,8 @@ export function Sidebar() {
   return (
     <aside
       className={`sticky top-24 h-fit rounded-[24px] border p-4 transition-all duration-300 ${
-        isCollapsed ? "w-[88px]" : "w-full max-w-[280px]"
-      }`}
+        isCollapsed ? "w-[88px]" : "w-[280px]"
+        }`}
       style={{
         background: "var(--surface)",
         borderColor: "var(--border)",

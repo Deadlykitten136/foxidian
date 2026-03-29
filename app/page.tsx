@@ -3,7 +3,7 @@ import { Sidebar } from "@/components/sidebar"
 export default function Home() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 md:px-6">
-      <div className="grid gap-6 md:grid-cols-[auto_minmax(0,1fr)]">
+      <div className="grid gap-6 sm:grid-cols-[auto_minmax(0,1fr)]">
         <Sidebar />
 
         <section

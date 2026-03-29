@@ -37,7 +37,7 @@ export function Navbar() {
           }}
         >
           <Image
-            src="/fox/logo.png"
+            src="/fox/logo1.png"
             alt="Foxidian fox logo"
             width={46}
             height={46}
