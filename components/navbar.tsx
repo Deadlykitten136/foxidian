@@ -2,13 +2,18 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useMemo } from "react"
+import { useEffect, useState } from "react"
 import { foxLines } from "@/lib/design-tokens"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navbar() {
-  const foxLine = useMemo(() => {
-    return foxLines[Math.floor(Math.random() * foxLines.length)]
+  const [foxLine, setFoxLine] = useState(
+    "..."
+  )
+
+  useEffect(() => {
+    const randomLine = foxLines[Math.floor(Math.random() * foxLines.length)]
+    setFoxLine(randomLine)
   }, [])
 
   return (
@@ -20,6 +25,8 @@ export function Navbar() {
       }}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 md:px-6">
+        
+        {/* LEFT - LOGO */}
         <Link
           href="/"
           className="group flex min-w-0 items-center gap-3 rounded-2xl border px-3 py-2"
@@ -37,16 +44,15 @@ export function Navbar() {
             className="h-[46px] w-[46px] object-contain transition-transform duration-200 group-hover:scale-[1.03]"
           />
 
-          <div className="min-w-0">
-            <div
-              className="text-[18px] font-light uppercase tracking-[0.22em]"
-              style={{ color: "var(--text-primary)" }}
-            >
-              Foxidian
-            </div>
+          <div
+            className="text-[18px] font-light uppercase tracking-[0.22em]"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Foxidian
           </div>
         </Link>
 
+        {/* CENTER - FOX LINE */}
         <div className="hidden flex-1 justify-center md:flex">
           <div
             className="rounded-full border px-5 py-2 text-sm italic"
@@ -61,6 +67,7 @@ export function Navbar() {
           </div>
         </div>
 
+        {/* RIGHT - ACTIONS */}
         <div className="flex items-center gap-3">
           <ThemeToggle />
 
@@ -79,6 +86,7 @@ export function Navbar() {
         </div>
       </div>
 
+      {/* MOBILE FOX LINE */}
       <div className="px-4 pb-3 md:hidden">
         <div
           className="rounded-full border px-4 py-2 text-sm italic"

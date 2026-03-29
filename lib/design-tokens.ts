@@ -53,9 +53,10 @@ export const spacing = {
 } as const
 
 export const foxLines = [
-  "Study with flow",
+  "Study with fox",
   "What in the fox?",
   "Foxing great!",
   "Stay sharp",
   "A needle a day keeps the doctor away",
+  "Acupuncture: prove that stabbing someone can help",
 ] as const
